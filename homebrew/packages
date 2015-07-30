@@ -1,0 +1,15 @@
+ag
+coreutils
+chruby
+cloudfoundry-cli
+ctags-fishman --HEAD
+direnv
+git
+git-duet
+go
+htop
+macvim --with-lua
+ruby-install
+watch
+wget
+vim --with-lua
