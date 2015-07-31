@@ -14,10 +14,10 @@ aliases_file="${MY_DIR}/aliases"
 completions_file="${MY_DIR}/completions"
 plugins_file="${MY_DIR}/plugins"
 
-if [[ ! -e ~/.bash_it ]]; then
+if [[ ! -e "${vim_dir}" ]]; then
   echo "  Cloning Vimfiles."
   git clone https://github.com/luan/vimfiles.git "${vim_dir}"
-else 
+else
   echo "  Updating Vimfiles."
   pushd "${vim_dir}"
     git pull

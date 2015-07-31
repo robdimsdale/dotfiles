@@ -14,10 +14,10 @@ aliases_file="${MY_DIR}/aliases"
 completions_file="${MY_DIR}/completions"
 plugins_file="${MY_DIR}/plugins"
 
-if [[ ! -e ~/.bash_it ]]; then
+if [[ ! -e "${bashit_dir}" ]]; then
   echo "  Cloning Bash it."
   git clone https://github.com/Bash-it/bash-it.git "${bashit_dir}"
-else 
+else
   echo "  Updating Bash it."
   pushd "${bashit_dir}"
     git pull
@@ -58,6 +58,3 @@ echo "  Installing custom bash aliases etc."
 rm -rf "$HOME/.bash_aliases"
 ln -s "${MY_DIR}/.bash_aliases" "$HOME/.bash_aliases"
 echo -e "\n# Load custom aliases\n[[ -r $HOME/.bash_aliases ]] && source $HOME/.bash_aliases" >> "$HOME/.bash_profile"
-
-echo "  Sourcing profile."
-source "$HOME"/.bash_profile
