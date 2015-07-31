@@ -62,4 +62,12 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+
+###############################################################################
+# Terminal & iTerm 2                                                          #
+###############################################################################
+
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
