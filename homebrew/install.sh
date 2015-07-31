@@ -21,7 +21,7 @@ then
 fi
 
 echo "  Updating homebrew."
-# brew update
+brew update
 
 echo "  Installing brew cask."
 brew install caskroom/cask/brew-cask
