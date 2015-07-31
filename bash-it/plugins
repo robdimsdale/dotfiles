@@ -1,4 +1,5 @@
 base
+boot2docker
 chruby-auto
 chruby
 docker
