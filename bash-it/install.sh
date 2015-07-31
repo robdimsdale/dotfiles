@@ -58,3 +58,6 @@ echo "  Installing custom bash aliases etc."
 rm -rf "$HOME/.bash_aliases"
 ln -s "${MY_DIR}/.bash_aliases" "$HOME/.bash_aliases"
 echo -e "\n# Load custom aliases\n[[ -r $HOME/.bash_aliases ]] && source $HOME/.bash_aliases" >> "$HOME/.bash_profile"
+
+echo "  Sourcing profile."
+source "$HOME"/.bash_profile
