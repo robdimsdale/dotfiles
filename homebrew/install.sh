@@ -39,7 +39,7 @@ while read pkg; do
 
     echo "  Installing $pkg."
     # Returns a warning (not error) if package already exists
-    brew install $pkg
+    brew install $pkg || brew upgrade $pkg
 done < "${packages_file}"
 
 while read binary; do
