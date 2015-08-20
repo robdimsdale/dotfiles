@@ -1,5 +1,8 @@
 authors:
   hrz: Halle Zucker; zhallez
   rmd: Rob Dimsdale; robert.dimsdale
+  rmd-pivotal: Rob Dimsdale
 email:
   domain: gmail.com
+email_addresses:
+  rmd-pivotal: rdimsdale@pivotal.io
