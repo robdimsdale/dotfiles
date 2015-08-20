@@ -9,6 +9,7 @@ git-duet
 go
 htop
 macvim --with-lua
+phantom js
 postgres
 ruby-install
 watch
