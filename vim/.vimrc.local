@@ -1,3 +1,4 @@
 let NERDTreeShowHidden=1
 let g:autosave = 1
 :set guifont=Inconsolata-dz:h18
+:set vb
