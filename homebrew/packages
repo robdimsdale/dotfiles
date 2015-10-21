@@ -13,6 +13,7 @@ macvim --with-lua
 phantomjs
 postgres
 ruby-install
+shellcheck
 watch
 wget
 wl
