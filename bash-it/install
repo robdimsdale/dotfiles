@@ -27,14 +27,14 @@ fi
 echo "  Installing Bash it."
 pushd "${bashit_dir}"
   set +o pipefail
-  yes | ./install.sh --none
+  yes | ./install.sh
   set -o pipefail
 popd
 
 set +u
 
 set +ef
-source "${bashit_dir}"/bash_it.sh
+source "${HOME}/.bash_profile"
 set -e
 
 while read -r completion; do
