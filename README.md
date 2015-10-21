@@ -12,5 +12,5 @@ Once XCode is installed and the license is accepted, run the following:
 ```sh
 git clone https://github.com/robdimsdale/dotfiles ~/dotfiles
 cd ~/dotfiles
-./install.sh
+./install
 ```

@@ -6,10 +6,10 @@ set -eu
 
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-"${MY_DIR}/homebrew/install.sh"
-"${MY_DIR}/git/install.sh"
-"${MY_DIR}/bash-it/install.sh"
-"${MY_DIR}/vim/install.sh"
-"${MY_DIR}/osx/install.sh"
+"${MY_DIR}/homebrew/install"
+"${MY_DIR}/git/install"
+"${MY_DIR}/bash-it/install"
+"${MY_DIR}/vim/install"
+"${MY_DIR}/osx/install"
 
 echo "All installation scripts completed successfully"
