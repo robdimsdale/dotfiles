@@ -1,8 +1,8 @@
 base
-boot2docker
 chruby-auto
 chruby
 docker
+docker-machine
 git
 history
 osx
