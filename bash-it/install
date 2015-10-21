@@ -37,21 +37,21 @@ set +ef
 source "${bashit_dir}"/bash_it.sh
 set -e
 
-while read completion; do
+while read -r completion; do
     [[ -z "${completion}" ]] && continue
 
     echo "  Enabling completion: ${completion}."
     bash-it enable completion "${completion}"
 done < "${completions_file}"
 
-while read alias; do
+while read -r alias; do
     [[ -z "${alias}" ]] && continue
 
     echo "  Enabling alias: ${alias}."
     bash-it enable alias "${alias}"
 done < "${aliases_file}"
 
-while read plugin; do
+while read -r plugin; do
     [[ -z "${plugin}" ]] && continue
 
     echo "  Enabling plugin: ${plugin}."

@@ -14,7 +14,7 @@ taps_file="${MY_DIR}/taps"
 binaries_file="${MY_DIR}/cask_binaries"
 
 # Check for Homebrew
-if test ! $(which brew)
+if test ! "$(which brew)"
 then
   echo "  Installing Homebrew."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -26,7 +26,7 @@ brew update
 echo "  Installing brew cask."
 brew install caskroom/cask/brew-cask || brew upgrade caskroom/cask/brew-cask
 
-while read tap; do
+while read -r tap; do
     [[ -z "${tap}" ]] && continue
 
     echo "  Installing ${tap}."
@@ -34,15 +34,15 @@ while read tap; do
     brew tap "${tap}"
 done < "${taps_file}"
 
-while read pkg; do
+while read -r pkg; do
     [[ -z "${pkg}" ]] && continue
 
     echo "  Installing $pkg."
     # Returns a warning (not error) if package already exists
-    brew install $pkg || brew upgrade $pkg
+    brew install "${pkg}" || brew upgrade "${pkg}"
 done < "${packages_file}"
 
-while read binary; do
+while read -r binary; do
     [[ -z "${binary}" ]] && continue
 
     echo "  Installing ${binary}."

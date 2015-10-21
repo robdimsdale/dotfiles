@@ -10,10 +10,6 @@ MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 vim_dir="$HOME/.vim"
 
-aliases_file="${MY_DIR}/aliases"
-completions_file="${MY_DIR}/completions"
-plugins_file="${MY_DIR}/plugins"
-
 if [[ ! -e "${vim_dir}" ]]; then
   echo "  Cloning Vimfiles."
   git clone https://github.com/luan/vimfiles.git "${vim_dir}"
