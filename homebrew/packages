@@ -15,5 +15,5 @@ postgres
 ruby-install
 watch
 wget
-wundergo
+wl
 vim --with-lua
