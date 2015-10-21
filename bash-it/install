@@ -25,32 +25,36 @@ else
 fi
 
 echo "  Installing Bash it."
-yes | "${bashit_dir}"/install.sh --none
+pushd "${bashit_dir}"
+  set +o pipefail
+  yes | ./install.sh --none
+  set -o pipefail
+popd
 
 set +u
 
-set +e
+set +ef
 source "${bashit_dir}"/bash_it.sh
 set -e
 
 while read completion; do
     [[ -z "${completion}" ]] && continue
 
-    echo "  Installing ${completion}."
+    echo "  Enabling completion: ${completion}."
     bash-it enable completion "${completion}"
 done < "${completions_file}"
 
 while read alias; do
     [[ -z "${alias}" ]] && continue
 
-    echo "  Installing ${alias}."
+    echo "  Enabling alias: ${alias}."
     bash-it enable alias "${alias}"
 done < "${aliases_file}"
 
 while read plugin; do
     [[ -z "${plugin}" ]] && continue
 
-    echo "  Installing ${plugin}."
+    echo "  Enabling plugin: ${plugin}."
     bash-it enable plugin "${plugin}"
 done < "${plugins_file}"
 
@@ -61,3 +65,4 @@ echo -e "\n# Load custom aliases\n[[ -r $HOME/.bash_aliases ]] && source $HOME/.
 
 rm -rf "$HOME/.inputrc"
 ln -s "${MY_DIR}/.inputrc" "$HOME/.inputrc"
+echo "  Installing custom bash aliases etc - done."
