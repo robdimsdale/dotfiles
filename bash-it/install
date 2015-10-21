@@ -4,7 +4,7 @@
 #
 # This install Bash-it, the community bash framework.
 
-set -eu
+set -euf -o pipefail
 
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

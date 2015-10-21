@@ -5,7 +5,7 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-set -eu
+set -euf -o pipefail
 
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
