@@ -4,8 +4,10 @@ chruby
 cloudfoundry-cli
 ctags-fishman --HEAD
 direnv
+findutils
 git
 git-duet
+grep
 go
 htop
 jq
