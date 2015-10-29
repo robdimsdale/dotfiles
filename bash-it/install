@@ -6,13 +6,13 @@
 
 set -euf -o pipefail
 
-MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-bashit_dir="$HOME/.bash_it"
+bashit_dir="${HOME}/.bash_it"
 
-aliases_file="${MY_DIR}/aliases"
-completions_file="${MY_DIR}/completions"
-plugins_file="${MY_DIR}/plugins"
+aliases_file="${my_dir}/aliases"
+completions_file="${my_dir}/completions"
+plugins_file="${my_dir}/plugins"
 
 if [[ ! -e "${bashit_dir}" ]]; then
   echo "  Cloning Bash it."
@@ -64,10 +64,10 @@ while read -r plugin; do
 done < "${plugins_file}"
 
 echo "  Installing custom bash aliases etc."
-rm -rf "$HOME/.bash_aliases"
-ln -s "${MY_DIR}/.bash_aliases" "$HOME/.bash_aliases"
-echo -e "\n# Load custom aliases\n[[ -r $HOME/.bash_aliases ]] && source $HOME/.bash_aliases" >> "$HOME/.bash_profile"
+rm -rf "${HOME}/.bash_aliases"
+ln -s "${my_dir}/.bash_aliases" "${HOME}/.bash_aliases"
+echo -e "\n# Load custom aliases\n[[ -r ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases" >> "${HOME}/.bash_profile"
 
-rm -rf "$HOME/.inputrc"
-ln -s "${MY_DIR}/.inputrc" "$HOME/.inputrc"
+rm -rf "${HOME}/.inputrc"
+ln -s "${my_dir}/.inputrc" "${HOME}/.inputrc"
 echo "  Installing custom bash aliases etc - done."

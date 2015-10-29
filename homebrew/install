@@ -7,11 +7,11 @@
 
 set -euf -o pipefail
 
-MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-packages_file="${MY_DIR}/packages"
-taps_file="${MY_DIR}/taps"
-binaries_file="${MY_DIR}/cask_binaries"
+packages_file="${my_dir}/packages"
+taps_file="${my_dir}/taps"
+binaries_file="${my_dir}/cask_binaries"
 
 # Check for Homebrew
 if test ! "$(which brew)"
@@ -37,7 +37,7 @@ done < "${taps_file}"
 while read -r pkg; do
     [[ -z "${pkg}" ]] && continue
 
-    echo "  Installing $pkg."
+    echo "  Installing ${pkg}"
     # Returns a warning (not error) if package already exists
     # Explicitly do not quote the pkg because we want to pass space-separated
     # as separate args.

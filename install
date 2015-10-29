@@ -4,12 +4,12 @@
 
 set -euf -o pipefail
 
-MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-"${MY_DIR}/homebrew/install"
-"${MY_DIR}/git/install"
-"${MY_DIR}/bash-it/install"
-"${MY_DIR}/vim/install"
-"${MY_DIR}/osx/install"
+"${my_dir}/homebrew/install"
+"${my_dir}/git/install"
+"${my_dir}/bash-it/install"
+"${my_dir}/vim/install"
+"${my_dir}/osx/install"
 
 echo "All installation scripts completed successfully"

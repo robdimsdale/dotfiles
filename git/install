@@ -4,12 +4,12 @@
 
 set -euf -o pipefail
 
-MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "  Installing global git config."
-rm -rf "$HOME/.gitconfig"
-cp "${MY_DIR}/.gitconfig.example" "$HOME/.gitconfig"
+rm -rf "${HOME}/.gitconfig"
+cp "${my_dir}/.gitconfig.example" "${HOME}/.gitconfig"
 
 echo "  Installing git authors."
-rm -rf "$HOME/.git-authors"
-ln -s "${MY_DIR}/.git-authors" "$HOME/.git-authors"
+rm -rf "${HOME}/.git-authors"
+ln -s "${my_dir}/.git-authors" "${HOME}/.git-authors"
