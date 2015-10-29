@@ -39,7 +39,10 @@ while read -r pkg; do
 
     echo "  Installing $pkg."
     # Returns a warning (not error) if package already exists
-    brew install "${pkg}" || brew upgrade "${pkg}"
+    # Explicitly do not quote the pkg because we want to pass space-separated
+    # as separate args.
+    # shellcheck disable=SC2086
+    brew install ${pkg} || brew upgrade ${pkg}
 done < "${packages_file}"
 
 while read -r binary; do

@@ -26,6 +26,9 @@ fi
 
 echo "  Installing Bash it."
 pushd "${bashit_dir}"
+  # the install script sometimes fails for reasons outside of our control,
+  # in ways that doesn't affect the rest of the process, but would trigger the
+  # pipefail option (yes would receive the bad signal from ./install.sh and fail
   set +o pipefail
   yes | ./install.sh
   set -o pipefail
@@ -34,6 +37,8 @@ popd
 set +u
 
 set +ef
+# Shellcheck does not like following non-constant source.
+# shellcheck disable=SC1090
 source "${HOME}/.bash_profile"
 set -e
 
