@@ -66,7 +66,11 @@ done < "${plugins_file}"
 echo "  Installing custom bash aliases etc."
 rm -rf "${HOME}/.bash_aliases"
 ln -s "${my_dir}/.bash_aliases" "${HOME}/.bash_aliases"
-echo -e "\n# Load custom aliases\n[[ -r ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases" >> "${HOME}/.bash_profile"
+
+cat << EOF >> "${HOME}/.bash_profile"
+# Load custom aliases
+[[ -r ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases
+EOF
 
 rm -rf "${HOME}/.inputrc"
 ln -s "${my_dir}/.inputrc" "${HOME}/.inputrc"

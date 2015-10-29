@@ -1,5 +1,7 @@
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
+#!/usr/bin/env bash
+
+export GOPATH=${HOME}/go
+export PATH=${GOPATH}/bin:${PATH}
 
 # Direnv
 if [ -f /usr/local/bin/direnv ]; then
