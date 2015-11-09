@@ -30,15 +30,18 @@ while read -r tap; do
     [[ -z "${tap}" ]] && continue
 
     echo "  Installing ${tap}."
-    # Returns a warning (not error) if package already exists
-    brew tap "${tap}"
+
+    # Returns an error if already tapped
+    brew tap "${tap}" || true
 done < "${taps_file}"
 
 while read -r pkg; do
     [[ -z "${pkg}" ]] && continue
 
     echo "  Installing ${pkg}"
+
     # Returns a warning (not error) if package already exists
+    #
     # Explicitly do not quote the pkg because we want to pass space-separated
     # as separate args.
     # shellcheck disable=SC2086
@@ -49,6 +52,7 @@ while read -r binary; do
     [[ -z "${binary}" ]] && continue
 
     echo "  Installing ${binary}."
+
     # Returns a warning (not error) if package already exists
     brew cask install "${binary}"
 done < "${binaries_file}"
