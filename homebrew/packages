@@ -1,11 +1,11 @@
 ag
 coreutils
 chruby
-cloudfoundry-cli
+pivotal/tap/cloudfoundry-cli
 direnv
 findutils
 git
-git-duet
+git-duet/tap/git-duet
 grep
 go
 htop
@@ -19,4 +19,4 @@ universal-ctags/universal-ctags/universal-ctags --HEAD
 vim --with-lua
 watch
 wget
-wl
+robdimsdale/tap/wl
