@@ -2,7 +2,6 @@ ag
 coreutils
 chruby
 cloudfoundry-cli
-ctags-fishman --HEAD
 direnv
 findutils
 git
@@ -16,7 +15,8 @@ phantomjs
 postgres
 ruby-install
 shellcheck
+universal-ctags/universal-ctags/universal-ctags --HEAD
+vim --with-lua
 watch
 wget
 wl
-vim --with-lua
