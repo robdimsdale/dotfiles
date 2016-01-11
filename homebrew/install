@@ -23,9 +23,6 @@ fi
 echo "  Updating homebrew."
 brew update
 
-echo "  Installing brew cask."
-brew install caskroom/cask/brew-cask || brew upgrade caskroom/cask/brew-cask
-
 while read -r tap; do
     [[ -z "${tap}" ]] && continue
 
