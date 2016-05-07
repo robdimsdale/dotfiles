@@ -6,6 +6,7 @@ general
 git
 homebrew-cask
 homebrew
+rails
 osx
 tmux
 vagrant
