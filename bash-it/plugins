@@ -2,7 +2,6 @@ base
 chruby-auto
 chruby
 docker
-docker-machine
 git
 history
 osx
