@@ -8,6 +8,9 @@ set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+pip3 install --upgrade pip
+pip3 install --upgrade neovim
+
 vim_dir="${HOME}/.vim"
 
 if [[ ! -e "${vim_dir}" ]]; then

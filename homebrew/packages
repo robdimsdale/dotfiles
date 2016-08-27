@@ -10,13 +10,14 @@ grep
 go
 htop
 jq
-macvim --with-lua
+neovim/neovim/neovim
 phantomjs
 postgres
+python
+python3
 ruby-install
 shellcheck
 universal-ctags/universal-ctags/universal-ctags --HEAD
-vim --with-lua
 watch
 wget
 robdimsdale/tap/wl
