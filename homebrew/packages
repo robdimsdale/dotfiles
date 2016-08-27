@@ -1,7 +1,7 @@
 ag
 coreutils
 chruby
-pivotal/tap/cloudfoundry-cli
+cloudfoundry/tap/cloudfoundry-cli
 direnv
 findutils
 git
@@ -12,6 +12,7 @@ htop
 jq
 neovim/neovim/neovim
 phantomjs
+pivotal/tap/pivnet-cli
 postgres
 python
 python3
