@@ -10,6 +10,7 @@ grep
 go
 htop
 jq
+mas
 neovim/neovim/neovim
 phantomjs
 pivotal/tap/pivnet-cli
