@@ -2,7 +2,7 @@
 #
 # Vim
 #
-# This install Vim using luan's vimfiles. https://github.com/luan/vimfiles
+# This configures Vim using luan's vimfiles. https://github.com/luan/vimfiles
 
 set -euf -o pipefail
 
@@ -13,15 +13,11 @@ pip3 install --upgrade neovim
 
 vim_dir="${HOME}/.vim"
 
-if [[ ! -e "${vim_dir}" ]]; then
-  echo "  Cloning Vimfiles."
-  git clone https://github.com/luan/vimfiles.git "${vim_dir}"
-else
-  echo "  Updating Vimfiles."
-  pushd "${vim_dir}"
-    git pull
-  popd
-fi
+mkdir -p "${vim_dir}"
+
+pushd "${vim_dir}"
+  git pull || git clone https://github.com/luan/vimfiles.git .
+popd
 
 echo "  Installing Vimfiles."
 "${vim_dir}"/install
