@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Powerline Status
+#
+# This install powerline status bar (e.g. for vim, tmux).
+
+set -euf -o pipefail
+
+powerline_fonts_dir=$HOME/workspace/powerline-fonts
+
+mkdir -p "${powerline_fonts_dir}"
+
+pushd "${powerline_fonts_dir}" > /dev/null
+  git pull || git clone https://github.com/powerline/fonts ~/workspace/powerline-fonts
+  ./install.sh
+popd > /dev/null
+
+pip install --upgrade powerline-status

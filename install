@@ -9,6 +9,7 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 "${my_dir}/homebrew/install"
 "${my_dir}/git/install"
 "${my_dir}/bash-it/install"
+"${my_dir}/powerline/install"
 "${my_dir}/vim/install"
 "${my_dir}/osx/install"
 
