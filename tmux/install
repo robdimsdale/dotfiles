@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# TMux
+#
+# This configures tmux
+
+set -euf -o pipefail
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "  Installing tmuxp."
+pip install --upgrade tmuxp
+
+tpm_dir="${HOME}/.tmux/plugins/tpm"
+
+mkdir -p "${tpm_dir}"
+
+echo "  Updating tmux plugin manager."
+pushd "${tpm_dir}"
+  git pull || git clone https://github.com/tmux-plugins/tpm .
+popd
+
+echo "  Installing custom tmux configuration."
+rm -rf "${HOME}/.tmux.conf"
+ln -s "${my_dir}/.tmux.conf" "${HOME}/.tmux.conf"
+
+echo " Installed - remember to run prefix+I,prefix+U inside tmux to reload plugins"
