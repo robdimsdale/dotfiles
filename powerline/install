@@ -6,7 +6,7 @@
 
 set -euf -o pipefail
 
-powerline_fonts_dir=$HOME/workspace/powerline-fonts
+powerline_fonts_dir="${HOME}/workspace/powerline-fonts"
 
 mkdir -p "${powerline_fonts_dir}"
 

@@ -15,6 +15,7 @@ vim_dir="${HOME}/.vim"
 
 mkdir -p "${vim_dir}"
 
+echo "  Updating vimfiles."
 pushd "${vim_dir}"
   git pull || git clone https://github.com/luan/vimfiles.git .
 popd
