@@ -14,15 +14,9 @@ aliases_file="${my_dir}/aliases"
 completions_file="${my_dir}/completions"
 plugins_file="${my_dir}/plugins"
 
-if [[ ! -e "${bashit_dir}" ]]; then
-  echo "  Cloning Bash it."
-  git clone https://github.com/Bash-it/bash-it.git "${bashit_dir}"
-else
-  echo "  Updating Bash it."
-  pushd "${bashit_dir}"
-    git pull
-  popd
-fi
+pushd "${bashit_dir}" > /dev/null
+  git pull || git clone https://github.com/Bash-it/bash-it.git .
+popd > /dev/null
 
 echo "  Installing Bash it."
 pushd "${bashit_dir}"
@@ -74,4 +68,8 @@ EOF
 
 rm -rf "${HOME}/.inputrc"
 ln -s "${my_dir}/.inputrc" "${HOME}/.inputrc"
+
+# TODO: use find or ls rather than glob
+cp "${my_dir}"/custom/* "${HOME}/.bash_it/custom/"
+
 echo "  Installing custom bash aliases etc - done."
