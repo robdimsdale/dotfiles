@@ -6,11 +6,20 @@ set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-"${my_dir}/homebrew/install"
+system_uname=$(uname -a)
+if [[ ${system_uname} == *"Ubuntu"* ]]; then
+  echo "Detected Ubuntu"
+elif [[ ${system_uname} == *"Darwin"* ]]; then
+  echo "Detected OSX"
+  "${my_dir}/homebrew/install"
+  "${my_dir}/osx/install"
+else
+  echo "Unrecognized system uname: ${system_uname} - exiting"
+fi
+
 "${my_dir}/git/install"
 "${my_dir}/bash-it/install"
 "${my_dir}/powerline/install"
 "${my_dir}/vim/install"
-"${my_dir}/osx/install"
 
 echo "All installation scripts completed successfully"
