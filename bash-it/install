@@ -10,16 +10,10 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 bashit_dir="${HOME}/.bash_it"
 
-aliases_file="${my_dir}/aliases"
-completions_file="${my_dir}/completions"
-plugins_file="${my_dir}/plugins"
-
+echo "  Installing Bash it."
 pushd "${bashit_dir}" > /dev/null
   git pull || git clone https://github.com/Bash-it/bash-it.git .
-popd > /dev/null
 
-echo "  Installing Bash it."
-pushd "${bashit_dir}"
   # the install script sometimes fails for reasons outside of our control,
   # in ways that doesn't affect the rest of the process, but would trigger the
   # pipefail option (yes would receive the bad signal from ./install.sh and fail
@@ -36,40 +30,37 @@ set +ef
 source "${HOME}/.bash_profile"
 set -e
 
+completions_file="${my_dir}/completions"
 while read -r completion; do
-    [[ -z "${completion}" ]] && continue
+  [[ -z "${completion}" ]] && continue
 
-    echo "  Enabling completion: ${completion}."
-    bash-it enable completion "${completion}"
+  echo "  Enabling completion: ${completion}."
+  bash-it enable completion "${completion}"
 done < "${completions_file}"
 
+aliases_file="${my_dir}/aliases"
 while read -r alias; do
-    [[ -z "${alias}" ]] && continue
+  [[ -z "${alias}" ]] && continue
 
-    echo "  Enabling alias: ${alias}."
-    bash-it enable alias "${alias}"
+  echo "  Enabling alias: ${alias}."
+  bash-it enable alias "${alias}"
 done < "${aliases_file}"
 
+plugins_file="${my_dir}/plugins"
 while read -r plugin; do
-    [[ -z "${plugin}" ]] && continue
+  [[ -z "${plugin}" ]] && continue
 
-    echo "  Enabling plugin: ${plugin}."
-    bash-it enable plugin "${plugin}"
+  echo "  Enabling plugin: ${plugin}."
+  bash-it enable plugin "${plugin}"
 done < "${plugins_file}"
 
-echo "  Installing custom bash aliases etc."
-rm -rf "${HOME}/.bash_aliases"
-ln -s "${my_dir}/.bash_aliases" "${HOME}/.bash_aliases"
-
-cat << EOF >> "${HOME}/.bash_profile"
-# Load custom aliases
-[[ -r ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases
-EOF
-
+echo "  Installing custom inputrc"
 rm -rf "${HOME}/.inputrc"
 ln -s "${my_dir}/.inputrc" "${HOME}/.inputrc"
 
+echo "  Installing custom bash_it scripts"
 # TODO: use find or ls rather than glob
-cp "${my_dir}"/custom/* "${HOME}/.bash_it/custom/"
+rm "${HOME}/.bash_it/custom/"*
+cp "${my_dir}/custom/"* "${HOME}/.bash_it/custom/"
 
 echo "  Installing custom bash aliases etc - done."
