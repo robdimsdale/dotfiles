@@ -9,6 +9,13 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 system_uname=$(uname -a)
 if [[ ${system_uname} == *"Ubuntu"* ]]; then
   echo "Detected Ubuntu"
+  "${my_dir}/ubuntu/install"
+  "${my_dir}/ubuntu/apt/install"
+  "${my_dir}/ubuntu/google-chrome/install"
+  "${my_dir}/ubuntu/jq/install"
+  "${my_dir}/ubuntu/git-duet/install"
+  "${my_dir}/ubuntu/ruby-install/install"
+  "${my_dir}/ubuntu/chruby/install"
 elif [[ ${system_uname} == *"Darwin"* ]]; then
   echo "Detected OSX"
   "${my_dir}/homebrew/install"

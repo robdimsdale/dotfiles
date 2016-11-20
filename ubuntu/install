@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Configures Ubuntu default behavior.
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling Ubuntu default behavior...\e[39m "
+
+echo 'pointer = 1 2 3 5 4 6 7 8 9 10 11 12' > "${HOME}/.Xmodmap"
+
+current_user=$(id -un)
+current_group=$(id -gn)
+sudo chown -R "${current_user}:${current_group}" /usr/local/bin
+sudo chown -R "${current_user}:${current_group}" /usr/local/lib
+
+echo -e "\e[32mdone\e[39m"

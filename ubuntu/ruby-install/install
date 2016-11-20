@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Installs ruby-install.
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling ruby-install...\e[39m "
+
+version="0.6.0"
+
+wget \
+  --quiet \
+  -O /tmp/ruby-install.tar.gz \
+  "https://github.com/postmodern/ruby-install/archive/v${version}.tar.gz"
+
+pushd /tmp/ > /dev/null
+  tar -xf /tmp/ruby-install.tar.gz
+popd > /dev/null
+
+pushd "/tmp/ruby-install-${version}" > /dev/null
+  sudo make install > /dev/null
+popd > /dev/null
+
+echo -e "\e[32mdone\e[39m"

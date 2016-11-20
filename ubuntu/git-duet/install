@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Configures Ubuntu default behavior.
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling git-duet...\e[39m "
+
+latest_tag_name=$(curl --silent https://api.github.com/repos/git-duet/git-duet/releases/latest | jq -r .tag_name)
+
+wget \
+  --quiet \
+  -O /tmp/git-duet.tar.gz \
+  "https://github.com/git-duet/git-duet/releases/download/${latest_tag_name}/linux_amd64.tar.gz"
+
+pushd /usr/local/bin/ > /dev/null
+  tar -xf /tmp/git-duet.tar.gz
+popd > /dev/null
+
+echo -e "\e[32mdone\e[39m"

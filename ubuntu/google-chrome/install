@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Configures Ubuntu default behavior.
+
+set -euf -o pipefail
+
+echo -e "\e[36mInstalling google chrome...\e[39m"
+
+wget \
+  --quiet \
+  -O /tmp/google-chrome.deb \
+  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i /tmp/google-chrome.deb
+
+echo -e "\e[36mInstalling google chrome...\e[39m \e[32mdone\e[39m"

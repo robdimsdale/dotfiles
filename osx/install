@@ -7,6 +7,7 @@
 set -euf -o pipefail
 
 echo "Setting OSX default behavior."
+echo -e "\e[36mInstalling OSX default behavior...\e[39m"
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -76,4 +77,5 @@ chflags nohidden ~/Library
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo -e "\e[36mInstalling OSX default behavior..\e[39m \e[32mdone\e[39m"
+echo -e "\e[36mNote that some of these changes require a logout/restart to take effect.\e[39m"

@@ -24,34 +24,34 @@ echo "  Updating homebrew."
 brew update
 
 while read -r tap; do
-    [[ -z "${tap}" ]] && continue
+  [[ -z "${tap}" ]] && continue
 
-    echo "  Installing ${tap}."
+  echo "  Installing ${tap}."
 
-    # Returns an error if already tapped
-    brew tap "${tap}" || true
+  # Returns an error if already tapped
+  brew tap "${tap}" || true
 done < "${taps_file}"
 
 while read -r pkg; do
-    [[ -z "${pkg}" ]] && continue
+  [[ -z "${pkg}" ]] && continue
 
-    echo "  Installing ${pkg}"
+  echo "  Installing ${pkg}"
 
-    # Returns a warning (not error) if package already exists
-    #
-    # Explicitly do not quote the pkg because we want to pass space-separated
-    # as separate args.
-    # shellcheck disable=SC2086
-    brew install ${pkg} || brew upgrade ${pkg}
+  # Returns a warning (not error) if package already exists
+  #
+  # Explicitly do not quote the pkg because we want to pass space-separated
+  # as separate args.
+  # shellcheck disable=SC2086
+  brew install ${pkg} || brew upgrade ${pkg}
 done < "${packages_file}"
 
 while read -r binary; do
-    [[ -z "${binary}" ]] && continue
+  [[ -z "${binary}" ]] && continue
 
-    echo "  Installing ${binary}."
+  echo "  Installing ${binary}."
 
-    # Returns a warning (not error) if package already exists
-    brew cask install "${binary}"
+  # Returns a warning (not error) if package already exists
+  brew cask install "${binary}"
 done < "${binaries_file}"
 
 echo "  Upgrading packages."

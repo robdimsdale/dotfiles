@@ -8,20 +8,22 @@ set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "  Installing tmuxp."
+echo -e "\e[36mInstalling tmuxp...\e[39m"
 pip install --upgrade tmuxp
+echo -e "\e[36mInstalling tmuxp...\e[39m \e[32mdone\e[39m"
 
+echo -en "\e[36mInstalling tpm plugin manager...\e[39m "
 tpm_dir="${HOME}/.tmux/plugins/tpm"
-
 mkdir -p "${tpm_dir}"
 
-echo "  Updating tmux plugin manager."
-pushd "${tpm_dir}"
-  git pull || git clone https://github.com/tmux-plugins/tpm .
-popd
+pushd "${tpm_dir}" > /dev/null
+  (git pull || git clone https://github.com/tmux-plugins/tpm .) > /dev/null
+popd > /dev/null
+echo -e "\e[32mdone\e[39m"
 
-echo "  Installing custom tmux configuration."
+echo -en "\e[36mInstalling custom tmux config...\e[39m"
 rm -rf "${HOME}/.tmux.conf"
 ln -s "${my_dir}/.tmux.conf" "${HOME}/.tmux.conf"
+echo -e "\e[32mdone\e[39m"
 
-echo " Installed - remember to run prefix+I,prefix+U inside tmux to reload plugins"
+echo -e "\e[33mRemember to run prefix+I,prefix+U inside tmux to reload plugins!\e[39m"

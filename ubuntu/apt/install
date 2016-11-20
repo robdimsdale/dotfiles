@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# APT
+#
+# This installs packages via apt
+
+set -euf -o pipefail
+
+echo -e "\e[36mInstalling packages...\e[39m"
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+ppas_file="${my_dir}/ppas"
+while read -r ppa; do
+  [[ -z "${ppa}" ]] && continue
+
+  sudo add-apt-repository -y "${ppa}"
+done < "${ppas_file}"
+
+sudo apt-get update
+
+packages_file="${my_dir}/packages"
+while read -r package; do
+  [[ -z "${package}" ]] && continue
+
+  sudo apt-get install -y "${package}"
+done < "${packages_file}"
+
+echo -e "\e[36mInstalling packages...\e[39m \e[32mdone\e[39m"

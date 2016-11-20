@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Installs jq
+# https://stedolan.github.io/jq/
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling jq...\e[39m "
+
+latest_tag_name=$(curl --silent https://api.github.com/repos/stedolan/jq/releases/latest | grep tag_name | awk '{ gsub(",",""); gsub("\"",""); print $2 }')
+
+wget \
+  --quiet \
+  -O /usr/local/bin/jq \
+  "https://github.com/stedolan/jq/releases/download/${latest_tag_name}/jq-linux64"
+
+chmod +x /usr/local/bin/jq
+
+echo -e "\e[32mdone\e[39m"

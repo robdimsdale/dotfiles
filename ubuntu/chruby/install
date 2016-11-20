@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Installs chruby.
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling chruby...\e[39m "
+
+version="0.3.9"
+
+wget \
+  --quiet \
+  -O /tmp/chruby.tar.gz \
+  "https://github.com/postmodern/chruby/archive/v${version}.tar.gz"
+
+pushd /tmp/ > /dev/null
+  tar -xf /tmp/chruby.tar.gz
+popd > /dev/null
+
+pushd "/tmp/chruby-${version}" > /dev/null
+  sudo make install > /dev/null
+popd > /dev/null
+
+echo -e "\e[32mdone\e[39m"
