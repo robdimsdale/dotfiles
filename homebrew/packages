@@ -1,4 +1,5 @@
 ag
+bash
 coreutils
 chruby
 cloudfoundry/tap/cloudfoundry-cli
