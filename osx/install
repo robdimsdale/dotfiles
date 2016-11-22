@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Configures OSX default behavior.
 # The original idea (and a couple settings) were grabbed from:
