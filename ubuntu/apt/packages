@@ -4,6 +4,7 @@ gawk
 git
 htop
 iotop
+neovim
 openssh-server
 postgresql
 python
