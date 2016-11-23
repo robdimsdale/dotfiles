@@ -4,6 +4,7 @@ gawk
 git
 htop
 fluxgui
+indicator-sysmonitor
 iotop
 neovim
 openssh-server
