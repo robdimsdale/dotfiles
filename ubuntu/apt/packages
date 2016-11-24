@@ -1,3 +1,4 @@
+automake
 cmake
 direnv
 dropbox
@@ -7,6 +8,9 @@ htop
 fluxgui
 indicator-sysmonitor
 iotop
+libtool
+libtool-bin
+m4
 neovim
 openssh-server
 postgresql
