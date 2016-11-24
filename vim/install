@@ -26,3 +26,6 @@ echo "  Installing Vimfiles."
 echo "  Installing custom vim configuration."
 rm -rf "${HOME}/.vimrc.local"
 ln -s "${my_dir}/.vimrc.local" "${HOME}/.vimrc.local"
+
+rm -rf "${HOME}/.vimrc.local.before"
+ln -s "${my_dir}/.vimrc.local.before" "${HOME}/.vimrc.local.before"
