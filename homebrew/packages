@@ -2,7 +2,7 @@ ag
 bash
 coreutils
 chruby
-cloudfoundry/tap/cloudfoundry-cli
+cloudfoundry/tap/cf-cli
 direnv
 findutils
 git
