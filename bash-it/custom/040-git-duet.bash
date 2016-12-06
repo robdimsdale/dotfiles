@@ -2,8 +2,8 @@
 
 set -eu
 
-alias duet="git duet --global"
-alias solo="git solo --global"
+alias duet="git duet"
+alias solo="git solo"
 alias dci="git duet-commit"
 
 set +eu
