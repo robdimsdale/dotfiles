@@ -10,6 +10,8 @@ indicator-sysmonitor
 iotop
 libtool
 libtool-bin
+libxml2-dev
+libcurl4-openssl-dev
 m4
 neovim
 openssh-server
