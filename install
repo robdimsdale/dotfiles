@@ -28,5 +28,6 @@ fi
 "${my_dir}/bash-it/install"
 "${my_dir}/powerline/install"
 "${my_dir}/vim/install"
+"${my_dir}/ssh/install"
 
 echo "All installation scripts completed successfully"
