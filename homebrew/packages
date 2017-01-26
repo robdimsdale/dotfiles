@@ -9,6 +9,7 @@ git
 git-duet/tap/git-duet
 grep
 go
+gnu-sed
 htop
 jq
 mas
