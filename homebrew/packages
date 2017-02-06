@@ -2,6 +2,7 @@ ag
 bash
 coreutils
 chruby
+cloudfoundry/tap/bosh-cli
 cloudfoundry/tap/cf-cli
 direnv
 findutils
