@@ -1,3 +1,5 @@
 let NERDTreeShowHidden=1
 let g:autosave = 1
 :set vb
+
+set clipboard=unnamed
