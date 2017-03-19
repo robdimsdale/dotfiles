@@ -22,11 +22,10 @@ popd > /dev/null
 echo -e "\e[32mdone\e[39m"
 
 echo -en "\e[36mInstalling custom tmux config...\e[39m"
-mkdir -p "${HOME}/bin"
-rm -rf "${HOME}/bin/safe-reattach-to-user-namespace"
+rm -rf "/usr/local/bin/safe-reattach-to-user-namespace"
 ln -s \
   "${my_dir}/safe-reattach-to-user-namespace" \
-  "${HOME}/bin/safe-reattach-to-user-namespace"
+  "/usr/local/bin/safe-reattach-to-user-namespace"
 
 rm -rf "${HOME}/.tmux.conf"
 ln -s "${my_dir}/.tmux.conf" "${HOME}/.tmux.conf"
