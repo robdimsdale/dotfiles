@@ -7,16 +7,5 @@
 set -euf -o pipefail
 
 echo -e "\e[36mInstalling powerline...\e[39m"
-
-powerline_fonts_dir="${HOME}/workspace/powerline-fonts"
-
-mkdir -p "${powerline_fonts_dir}"
-
-pushd "${powerline_fonts_dir}" > /dev/null
-  (git pull || git clone https://github.com/powerline/fonts .) > /dev/null
-  ./install.sh
-popd > /dev/null
-
 pip install --upgrade powerline-status
-
 echo -e "\e[36mInstalling powerline...\e[39m \e[32mdone\e[39m"
