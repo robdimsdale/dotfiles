@@ -30,5 +30,6 @@ fi
 "${my_dir}/powerline/install"
 "${my_dir}/vim/install"
 "${my_dir}/ssh/install"
+"${my_dir}/tmux/install"
 
 echo "All installation scripts completed successfully"
