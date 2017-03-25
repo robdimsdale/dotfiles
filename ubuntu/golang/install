@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Installs golang
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling golang...\e[39m "
+
+version="1.8"
+
+wget \
+  --quiet \
+  -O "$HOME/Downloads/go${version}.linux-amd64.tar.gz" \
+  "https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz"
+
+sudo tar \
+  -C /usr/local \
+  -xzf "$HOME/Downloads/go${version}.linux-amd64.tar.gz"
+
+echo -e "\e[32mdone\e[39m"

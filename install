@@ -12,6 +12,7 @@ if [[ ${system_uname} == *"Ubuntu"* ]]; then
   "${my_dir}/ubuntu/install"
   "${my_dir}/ubuntu/apt/install"
   "${my_dir}/ubuntu/google-chrome/install"
+  "${my_dir}/ubuntu/golang/install"
   "${my_dir}/ubuntu/jq/install"
   "${my_dir}/ubuntu/git-duet/install"
   "${my_dir}/ubuntu/ruby-install/install"
