@@ -13,6 +13,7 @@ go
 gnu-sed
 htop
 jq
+keychain
 mas
 neovim/neovim/neovim
 phantomjs
