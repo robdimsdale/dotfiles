@@ -8,6 +8,8 @@ direnv
 findutils
 git
 git-duet/tap/git-duet
+gpg
+gpg-agent
 grep
 go
 gnu-sed
