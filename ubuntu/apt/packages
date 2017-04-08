@@ -12,7 +12,6 @@ libtool
 libtool-bin
 libxml2-dev
 libcurl4-openssl-dev
-lastpass-cli
 m4
 neovim
 openssh-server
