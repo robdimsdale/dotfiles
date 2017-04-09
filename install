@@ -25,6 +25,7 @@ else
   echo "Unrecognized system uname: ${system_uname} - exiting"
 fi
 
+"${my_dir}/alacritty/install"
 "${my_dir}/git/install"
 "${my_dir}/bash-it/install"
 "${my_dir}/powerline/install"

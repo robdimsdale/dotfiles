@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#
+# Alacritty
+#
+# This installs the configuration for alacritty
+# It is assumed that alacritty is already installed
+# via some other means, as curently it requires compiling
+# from source via rust.
+
+set -euf -o pipefail
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo -en "\e[36mInstalling custom alacritty config...\e[39m "
+
+system_uname=$(uname -a)
+rm -rf "${HOME}/.alacritty.yml"
+if [[ ${system_uname} == *"Ubuntu"* ]]; then
+  config_file="alacritty.yml"
+elif [[ ${system_uname} == *"Darwin"* ]]; then
+  config_file="alacritty_macos.yml"
+else
+  echo "Unrecognized system uname: ${system_uname} - exiting"
+  exit 1
+fi
+
+ln -s \
+  "${my_dir}/${config_file}" \
+  "${HOME}/.alacritty.yml"
+
+echo -e "\e[32mdone\e[39m"
