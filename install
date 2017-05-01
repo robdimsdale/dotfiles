@@ -27,6 +27,7 @@ fi
 
 "${my_dir}/alacritty/install"
 "${my_dir}/git/install"
+"${my_dir}/gpg/install"
 "${my_dir}/bash-it/install"
 "${my_dir}/powerline/install"
 "${my_dir}/vim/install"
