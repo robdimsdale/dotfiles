@@ -10,5 +10,5 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo -en "\e[36mInstalling .gnupg/gpg-agent.conf...\e[39m "
 rm -rf "${HOME}/.gnupg/gpg-agent.conf"
-ln -s "${my_dir}.gnupg/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
+ln -s "${my_dir}/.gnupg/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 echo -e "\e[32mdone\e[39m"
