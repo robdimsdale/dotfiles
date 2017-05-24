@@ -19,6 +19,7 @@ keychain
 mas
 neovim/neovim/neovim
 phantomjs
+pinentry
 pivotal/tap/pivnet-cli
 postgres
 python
