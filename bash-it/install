@@ -60,6 +60,6 @@ echo -e "\e[32mdone\e[39m"
 
 echo -en "\e[36mInstalling custom bash scripts...\e[39m "
 # TODO: use find or ls rather than glob
-rm "${HOME}/.bash_it/custom/"*
+rm -rf "${HOME}/.bash_it/custom/"*
 cp "${my_dir}/custom/"* "${HOME}/.bash_it/custom/"
 echo -e "\e[32mdone\e[39m"
