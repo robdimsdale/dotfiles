@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Bash
+#
+# This install Bash config e.g. .bashrc, .inputrc, etc.
+
+set -euf -o pipefail
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo -en "\e[36mInstalling custom .bashrc...\e[39m "
+rm -rf "${HOME}/.bashrc"
+ln -s "${my_dir}/.bashrc" "${HOME}/.bashrc"
+echo -e "\e[32mdone\e[39m"
+
+echo -en "\e[36mInstalling custom .bash_profile...\e[39m "
+rm -rf "${HOME}/.bash_profile"
+ln -s "${my_dir}/.bash_profile" "${HOME}/.bash_profile"
+echo -e "\e[32mdone\e[39m"
+
+echo -en "\e[36mInstalling custom .inputrc...\e[39m "
+rm -rf "${HOME}/.inputrc"
+ln -s "${my_dir}/.inputrc" "${HOME}/.inputrc"
+echo -e "\e[32mdone\e[39m"
