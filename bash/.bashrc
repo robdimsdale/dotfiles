@@ -51,5 +51,7 @@ yubishell() {
   )
 }
 
+source /usr/local/share/chruby/chruby.sh
+
 PS1="\n$(clock_prompt) ${green}\w →${reset_color} "
 export PS1
