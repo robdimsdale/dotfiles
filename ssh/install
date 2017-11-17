@@ -8,5 +8,6 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo -en "\e[36mInstalling .ssh/rc...\e[39m "
 rm -rf "${HOME}/.ssh/rc"
+mkdir -p "${HOME}/.ssh"
 ln -s "${my_dir}/rc" "${HOME}/.ssh/rc"
 echo -e "\e[32mdone\e[39m"
