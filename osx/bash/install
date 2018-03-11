@@ -10,7 +10,7 @@ new_shell_path="$(brew --prefix)/bin/bash"
 export new_shell_path
 
 if ! (grep -q "${new_shell_path}" /etc/shells); then
-  sudo -i "echo \"${new_shell_path}\" >> /etc/shells"
+  echo "${new_shell_path}" | sudo tee -a /etc/shells
 fi
 
 sudo chsh -s "${new_shell_path}" "$(whoami)" > /dev/null 2>&1
