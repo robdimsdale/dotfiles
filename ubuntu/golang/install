@@ -6,7 +6,7 @@ set -euf -o pipefail
 
 echo -en "\e[36mInstalling golang...\e[39m "
 
-version="1.8.1"
+version="1.12.7"
 
 wget \
   --quiet \
