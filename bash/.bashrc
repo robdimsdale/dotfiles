@@ -10,6 +10,7 @@ function clock_prompt {
 
 export EDITOR=vim
 
+# Golang
 export GOPATH="${HOME}/go"
 export PATH=${GOPATH}/bin:${PATH}
 
@@ -17,6 +18,19 @@ gorootbin="/usr/local/go/bin"
 
 if [[ ${PATH} != *"${gorootbin}"* ]]; then
   export PATH=$PATH:"${gorootbin}"
+fi
+
+# Rust
+if hash rustc 2>/dev/null; then
+  export PATH=${HOME}/.cargo/bin:${PATH}
+
+  RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+  export RUST_SRC_PATH
+
+  if hash racer 2>/dev/null; then
+    RACER_PATH="$(command -v racer)"
+    export RACER_PATH
+  fi
 fi
 
 if [[ -f /usr/local/bin/direnv  || -f /usr/bin/direnv ]]; then
