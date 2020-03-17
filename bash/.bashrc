@@ -21,9 +21,8 @@ if [[ ${PATH} != *"${gorootbin}"* ]]; then
 fi
 
 # Rust
+export PATH=${HOME}/.cargo/bin:${PATH}
 if hash rustc 2>/dev/null; then
-  export PATH=${HOME}/.cargo/bin:${PATH}
-
   RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
   export RUST_SRC_PATH
 
