@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# Neovim
+#
+# This configures Vim using luan's vimfiles. https://github.com/luan/vimfiles
+
+set -euf -o pipefail
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+pip3 install --upgrade pip
+pip3 install --upgrade neovim
+
+nvim_dir="${HOME}/.config/nvim"
+
+mkdir -p "${nvim_dir}"
+
+echo "  Updating Luan's Neovim distribution."
+pushd "${nvim_dir}"
+  git pull || git clone https://github.com/luan/nvim.git .
+popd
+
+echo "  Installing custom vim configuration."
+rm -rf "${nvim_dir}/user/plug.vim"
+ln -s "${my_dir}/plug.vim" "${nvim_dir}/user/plug.vim"
+
+rm -rf "${nvim_dir}/user/after.vim"
+ln -s "${my_dir}/after.vim" "${nvim_dir}/user/after.vim"
