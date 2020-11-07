@@ -1,4 +1,1 @@
-homebrew/dupes
-homebrew/versions
-
-caskroom/versions
+homebrew/cask-versions
