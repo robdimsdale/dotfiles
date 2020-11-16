@@ -2,14 +2,12 @@ ag
 bash
 coreutils
 chruby
-cloudfoundry/tap/bosh-cli
 cloudfoundry/tap/cf-cli
 direnv
 findutils
 git
 git-duet/tap/git-duet
 gpg
-gpg-agent
 grep
 go
 gnu-sed
@@ -17,10 +15,8 @@ htop
 jq
 keychain
 mas
-neovim/neovim/neovim
-phantomjs
+neovim
 pinentry
-pivotal/tap/pivnet-cli
 postgres
 python
 python3
@@ -29,4 +25,3 @@ shellcheck
 universal-ctags/universal-ctags/universal-ctags --HEAD
 watch
 wget
-robdimsdale/tap/wl
