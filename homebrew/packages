@@ -11,6 +11,7 @@ gpg
 grep
 go
 gnu-sed
+fish
 htop
 jq
 keychain
@@ -22,6 +23,7 @@ python
 python3
 ruby-install
 shellcheck
+starship
 universal-ctags/universal-ctags/universal-ctags --HEAD
 watch
 wget

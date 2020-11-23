@@ -4,6 +4,7 @@ direnv
 gawk
 git
 htop
+fish
 fluxgui
 indicator-sysmonitor
 iotop

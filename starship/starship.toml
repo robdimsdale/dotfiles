@@ -1,0 +1,31 @@
+[directory]
+truncate_to_repo = false
+truncation_length = 8
+truncation_symbol = "…/"
+
+[gcloud]
+disabled = true
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+[golang]
+disabled = true
+
+[line_break]
+disabled = true
+
+[rust]
+disabled = true
+
+[time]
+disabled = false

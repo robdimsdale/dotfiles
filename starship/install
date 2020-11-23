@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# Starship
+#
+# This installs Starship configuration
+
+set -euf -o pipefail
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+dest_location="${HOME}/.config/starship.toml"
+
+echo -en "\e[36mInstalling custom Starship config...\e[39m "
+rm -rf "${dest_location}"
+ln -s "${my_dir}/starship.toml" "${dest_location}"
+echo -e "\e[32mdone\e[39m"

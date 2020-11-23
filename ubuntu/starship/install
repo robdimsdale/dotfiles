@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Installs starship
+# https://starship.rs
+
+set -euf -o pipefail
+
+echo -en "\e[36mInstalling starship...\e[39m "
+
+curl -fsSL https://starship.rs/install.sh | bash -s -- --verbose --force
+
+echo -e "\e[32mdone\e[39m"
