@@ -3,9 +3,6 @@
 # Alacritty
 #
 # This installs the configuration for alacritty
-# It is assumed that alacritty is already installed
-# via some other means, as curently it requires compiling
-# from source via rust.
 
 set -euf -o pipefail
 
@@ -13,8 +10,13 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo -en "\e[36mInstalling custom alacritty config...\e[39m "
 
+dest_config_dir="${HOME}/.config/alacritty"
+mkdir -p "${dest_config_dir}"
+
+dest_location="${dest_config_dir}/alacritty.yml"
+rm -rf "${dest_location}"
+
 system_uname=$(uname -a)
-rm -rf "${HOME}/.alacritty.yml"
 if [[ ${system_uname} == *"Ubuntu"* ]]; then
   config_file="alacritty.yml"
 elif [[ ${system_uname} == *"Darwin"* ]]; then
@@ -26,6 +28,6 @@ fi
 
 ln -s \
   "${my_dir}/${config_file}" \
-  "${HOME}/.alacritty.yml"
+  "${dest_location}"
 
 echo -e "\e[32mdone\e[39m"
