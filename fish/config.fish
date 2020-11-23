@@ -15,10 +15,10 @@ end
 
 # Rust
 set -x PATH $HOME/.cargo/bin:$PATH
-if hash rustc 2>/dev/null;
+if type -q rustc
     set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
-    if hash racer 2>/dev/null;
+    if type -q racer
         set -x RACER_PATH (command -v racer)
     end
 end
