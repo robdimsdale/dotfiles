@@ -23,4 +23,6 @@ if type -q rustc
     end
 end
 
+source (pack completion --shell fish)
+
 starship init fish | source
