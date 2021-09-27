@@ -25,4 +25,7 @@ end
 
 source (pack completion --shell fish)
 
+set gcloud_path (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+source $gcloud_path
+
 starship init fish | source
