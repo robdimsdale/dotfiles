@@ -10,19 +10,25 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 pip3 install --upgrade pip
 pip3 install --upgrade neovim
+pip3 install --upgrade pynvim
 
-nvim_dir="${HOME}/.config/nvim"
+nvim_dir="${HOME}/.config/nvim/"
 
 mkdir -p "${nvim_dir}"
 
 echo "  Updating Luan's Neovim distribution."
 pushd "${nvim_dir}"
-  git pull || git clone https://github.com/luan/nvim.git .
+git pull || git clone https://github.com/luan/nvim.git .
 popd
 
-echo "  Installing custom vim configuration."
-rm -rf "${nvim_dir}/user/plug.vim"
-ln -s "${my_dir}/plug.vim" "${nvim_dir}/user/plug.vim"
+nvim_user_dir="${nvim_dir}/user/"
+mkdir -p "${nvim_user_dir}"
 
-rm -rf "${nvim_dir}/user/after.vim"
-ln -s "${my_dir}/after.vim" "${nvim_dir}/user/after.vim"
+echo "  Installing custom vim configuration."
+rm -rf "${nvim_user_dir}/before.vim"
+
+rm -rf "${nvim_user_dir}/plug.vim"
+ln -s "${my_dir}/plug.vim" "${nvim_user_dir}/plug.vim"
+
+rm -rf "${nvim_user_dir}/after.vim"
+ln -s "${my_dir}/after.vim" "${nvim_user_dir}/after.vim"
