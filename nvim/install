@@ -16,13 +16,14 @@ nvim_dir="${HOME}/.config/nvim"
 mkdir -p "${nvim_dir}"
 
 echo "  Updating Luan's Neovim distribution."
-pushd "${nvim_dir}"
-  git pull || git clone https://github.com/luan/nvim.git .
-popd
+pushd "${nvim_dir}" > /dev/null
+  git pull -q || git clone https://github.com/luan/nvim.git .
+popd > /dev/null
 
-echo "  Installing custom vim configuration."
-rm -rf "${nvim_dir}/user/plug.vim"
-ln -s "${my_dir}/plug.vim" "${nvim_dir}/user/plug.vim"
+mkdir -p "${nvim_dir}/lua/user/"
 
-rm -rf "${nvim_dir}/user/after.vim"
-ln -s "${my_dir}/after.vim" "${nvim_dir}/user/after.vim"
+rm -rf "${nvim_dir}/lua/user/after.lua"
+ln -s "${my_dir}/.config/nvim/lua/user/after.lua" "${nvim_dir}/lua/user/after.lua"
+
+rm -rf "${nvim_dir}/lua/user/plugins.lua"
+ln -s "${my_dir}/.config/nvim/lua/user/plugins.lua" "${nvim_dir}/lua/user/plugins.lua"
