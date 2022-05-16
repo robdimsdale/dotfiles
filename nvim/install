@@ -2,14 +2,14 @@
 #
 # Neovim
 #
-# This configures Vim using luan's vimfiles. https://github.com/luan/vimfiles
+# This configures Neovim using luan's neovim config. https://github.com/luan/nvim
 
 set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 pip3 install --upgrade pip
-pip3 install --upgrade neovim
+pip3 install --upgrade pynvim
 
 nvim_dir="${HOME}/.config/nvim"
 
