@@ -1,4 +1,0 @@
-let NERDTreeShowHidden=1
-let g:autosave = 1
-
-set clipboard=unnamed

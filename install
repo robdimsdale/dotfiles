@@ -31,7 +31,7 @@ fi
 "${my_dir}/gpg/install"
 "${my_dir}/bash/install"
 "${my_dir}/powerline/install"
-"${my_dir}/vim/install"
+"${my_dir}/nvim/install"
 "${my_dir}/ssh/install"
 "${my_dir}/starship/install"
 "${my_dir}/tmux/install"
