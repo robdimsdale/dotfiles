@@ -7,5 +7,5 @@
 set -euf -o pipefail
 
 echo -e "\e[36mInstalling powerline...\e[39m"
-pip install --upgrade powerline-status
+pip3 install --upgrade powerline-status
 echo -e "\e[36mInstalling powerline...\e[39m \e[32mdone\e[39m"
