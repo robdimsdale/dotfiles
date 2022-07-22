@@ -11,7 +11,6 @@ my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 packages_file="${my_dir}/packages"
 taps_file="${my_dir}/taps"
-binaries_file="${my_dir}/cask_binaries"
 
 # Check for Homebrew
 if test ! "$(which brew)"
@@ -44,15 +43,6 @@ while read -r pkg; do
   # shellcheck disable=SC2086
   brew install ${pkg} || brew upgrade ${pkg}
 done < "${packages_file}"
-
-while read -r binary; do
-  [[ -z "${binary}" ]] && continue
-
-  echo "  Installing ${binary}."
-
-  # Returns a warning (not error) if package already exists
-  brew cask install "${binary}"
-done < "${binaries_file}"
 
 echo "  Upgrading packages."
 brew upgrade
