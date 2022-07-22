@@ -23,6 +23,8 @@ if type -q rustc
     end
 end
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source (pack completion --shell fish)
 
 set gcloud_path (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc

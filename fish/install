@@ -7,9 +7,11 @@
 set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-dest_location="${HOME}/.config/fish/config.fish"
+dest_dir="${HOME}/.config/fish"
+dest_location="${dest_dir}/config.fish"
 
 echo -en "\e[36mInstalling custom Fish config...\e[39m "
 rm -rf "${dest_location}"
+mkdir -p "${dest_dir}"
 ln -s "${my_dir}/config.fish" "${dest_location}"
 echo -e "\e[32mdone\e[39m"
