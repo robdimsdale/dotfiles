@@ -3,6 +3,8 @@ set -x EDITOR vim
 
 set -x PATH $PATH /usr/local/sbin
 
+set -x PATH $HOME/bin $PATH
+
 # Golang
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin:$PATH
