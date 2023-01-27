@@ -17,9 +17,6 @@ m4
 neovim
 openssh-server
 postgresql
-python
-python-dev
-python-pip
 python3
 python3-pip
 python3-dev
