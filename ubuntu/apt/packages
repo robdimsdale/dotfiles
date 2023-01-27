@@ -5,7 +5,6 @@ gawk
 git
 htop
 fish
-fluxgui
 indicator-sysmonitor
 iotop
 libcurl4-openssl-dev
