@@ -10,6 +10,8 @@ function clock_prompt {
 
 export EDITOR=vim
 
+export PATH="$HOME/bin:$PATH"
+
 # Golang
 export GOPATH="${HOME}/go"
 export PATH=${GOPATH}/bin:${PATH}
