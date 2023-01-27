@@ -19,11 +19,6 @@ done < "${ppas_file}"
 
 sudo apt-get update
 
-packages_file="${my_dir}/packages"
-while read -r package; do
-  [[ -z "${package}" ]] && continue
-
-  sudo apt-get install -y "${package}"
-done < "${packages_file}"
+sudo apt-get install -y $(cat "${my_dir}/packages" )
 
 echo -e "\e[36mInstalling packages...\e[39m \e[32mdone\e[39m"
