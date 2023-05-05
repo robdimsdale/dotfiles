@@ -1,35 +1,17 @@
 set -x SHELL /usr/local/bin/fish
 set -x EDITOR vim
 
-set -x PATH $PATH /usr/local/sbin
+fish_add_path /usr/local/sbin
+fish_add_path $HOME/bin
+fish_add_path $HOME/.cargo/bin
 
-set -x PATH $HOME/bin $PATH
-
-# Golang
-set -x GOPATH $HOME/go
-set -x PATH $GOPATH/bin:$PATH
-
-set gorootbin "/usr/local/go/bin"
-
-if not contains $gorootbin $PATH
-    set -x PATH $PATH $gorootbin
+if type -q pack
+  source (pack completion --shell fish)
 end
-
-# Rust
-set -x PATH $HOME/.cargo/bin:$PATH
-if type -q rustc
-    set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
-
-    if type -q racer
-        set -x RACER_PATH (command -v racer)
-    end
-end
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-source (pack completion --shell fish)
 
 set gcloud_path (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
-source $gcloud_path
+if test -f $gcloud_path
+  source $gcloud_path
+end
 
 starship init fish | source
