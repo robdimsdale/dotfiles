@@ -5,6 +5,14 @@ fish_add_path /usr/local/sbin
 fish_add_path $HOME/bin
 fish_add_path $HOME/.cargo/bin
 
+if test -f /opt/homebrew/bin/brew
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+
+if test -f /usr/local/bin/brew
+  eval (/usr/local/bin/brew shellenv)
+end
+
 if type -q pack
   source (pack completion --shell fish)
 end
