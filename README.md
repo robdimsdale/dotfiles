@@ -14,3 +14,7 @@ git clone https://github.com/robdimsdale/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./install
 ```
+
+## Prerequisites
+
+* Homebrew is installed

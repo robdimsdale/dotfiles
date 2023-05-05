@@ -9,42 +9,8 @@ set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-packages_file="${my_dir}/packages"
-taps_file="${my_dir}/taps"
-
-# Check for Homebrew
-if test ! "$(which brew)"
-then
-  echo "  Installing Homebrew."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-echo "  Updating homebrew."
 brew update
-
-while read -r tap; do
-  [[ -z "${tap}" ]] && continue
-
-  echo "  Installing ${tap}."
-
-  # Returns an error if already tapped
-  brew tap "${tap}" || true
-done < "${taps_file}"
-
-while read -r pkg; do
-  [[ -z "${pkg}" ]] && continue
-
-  echo "  Installing ${pkg}"
-
-  # Returns a warning (not error) if package already exists
-  #
-  # Explicitly do not quote the pkg because we want to pass space-separated
-  # as separate args.
-  # shellcheck disable=SC2086
-  brew install ${pkg} || brew upgrade ${pkg}
-done < "${packages_file}"
-
-echo "  Upgrading packages."
+brew bundle --file="$my_dir/Brewfile"
 brew upgrade
 
 exit 0
