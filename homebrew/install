@@ -9,6 +9,11 @@ set -euf -o pipefail
 
 my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Move lock file if it exists
+if [ -f "$my_dir/Brewfile.lock.json" ]; then
+  mv "$my_dir/Brewfile.lock.json" "$my_dir/Brewfile.lock.json.bak"
+fi
+
 brew update
 brew bundle --file="$my_dir/Brewfile"
 brew upgrade
