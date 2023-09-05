@@ -10,16 +10,10 @@ disabled = true
 disabled = true
 
 [git_branch]
-disabled = true
+ignore_branches = [ "main" ]
 
 [git_commit]
-disabled = true
-
-[git_state]
-disabled = true
-
-[git_status]
-disabled = true
+tag_disabled = false
 
 [golang]
 disabled = true
