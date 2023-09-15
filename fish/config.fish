@@ -3,6 +3,7 @@ set -x EDITOR vim
 
 fish_add_path /usr/local/sbin
 fish_add_path $HOME/bin
+fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
 
 if test -f /opt/homebrew/bin/brew
