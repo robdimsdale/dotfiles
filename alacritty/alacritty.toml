@@ -1,0 +1,6 @@
+shell = { program = "/opt/homebrew/bin/fish", args = ["--login"] }
+live_config_reload = true
+
+[font]
+normal = { family = "InconsolataGo Nerd Font Mono" }
+size = 20.0

@@ -13,18 +13,8 @@ echo -en "\e[36mInstalling custom alacritty config...\e[39m "
 dest_config_dir="${HOME}/.config/alacritty"
 mkdir -p "${dest_config_dir}"
 
-dest_location="${dest_config_dir}/alacritty.yml"
-rm -rf "${dest_location}"
-
-system_uname=$(uname -a)
-if [[ ${system_uname} == *"Ubuntu"* ]]; then
-  config_file="alacritty.yml"
-elif [[ ${system_uname} == *"Darwin"* ]]; then
-  config_file="alacritty_macos.yml"
-else
-  echo "Unrecognized system uname: ${system_uname} - exiting"
-  exit 1
-fi
+dest_location="${dest_config_dir}/alacritty.toml"
+config_file="alacritty.toml"
 
 ln -s \
   "${my_dir}/${config_file}" \
